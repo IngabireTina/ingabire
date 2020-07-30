@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+<p>Are you sure you want to delete the "{{ form }}"</p>
+    <form action="{% url 'deletestock' form.id %}" method="POST">
+     {% csrf_token %}
+    <a href="{% url 'allstock' %}">cancel</a>
+         <input type="submit" name="submit">
+ </form>
+
+{% endblock %}

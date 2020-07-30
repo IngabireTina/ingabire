@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<p>Are you sure you want to delete the item "{{ user }}"</p>
+<form action="{% url 'delete_user' user.id %}" method="POST">
+{% csrf_token %}
+<a href="{% url 'users' %}">cancel</a>
+<input type="submit" name="submit">
+</form>
+
+
+{% endblock %}
