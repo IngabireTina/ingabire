@@ -38,6 +38,7 @@
                         <li class="nav-item">
                             <div id="custom-search" class="top-search-bar">
                                 <input class="form-control" type="text" placeholder="Search..">
+{#                                {{ myFilter.form }}#}
                             </div>
                         </li>
                         <li class="nav-item dropdown notification">
@@ -125,11 +126,12 @@
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name"><span class="ml-2"></span></h5>
-{#                                    {{ request.user }}#}
+                                    {{ request.user }}
+                                    <br>
                                     <span class="status"></span><span class="ml-2">Available</span>
                                 </div>
-                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
+                                <a class="dropdown-item" href="{% url 'profile' %}"><i class="fas fa-user mr-2"></i>{{ request.user }}</a>
+                                <a class="dropdown-item" href="{% url 'profile' %}"><i class="fas fa-cog mr-2"></i>Setting</a>
                                 <a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>

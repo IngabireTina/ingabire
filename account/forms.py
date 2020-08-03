@@ -15,6 +15,7 @@ class CreateUserForm(UserCreationForm):
             'last_name',
             'address',
             'phone_number',
+            'profile_pic',
 
         ]
 
@@ -33,7 +34,8 @@ class CreateUserForm(UserCreationForm):
 class UserForm(ModelForm):
     class Meta:
         model = User
-        fields = ['username', 'email', 'first_name', 'last_name', 'phone_number', 'address']
+        fields = '__all__'
+        exclude = ['username']
 
 
 class AddressForm(ModelForm):

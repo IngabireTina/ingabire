@@ -5,6 +5,7 @@ urlpatterns = [
 
 
     path('recorditem/', views.recordItem, name='recorditem'),
+    path('all_item/', views.allItem, name='all_item'),
 
     path('updateitem/<str:pk>/', views.updateItem, name='updateitem'),
     path('deleteitem/<str:pk>/', views.deleteItem, name='deleteitem'),

@@ -31,57 +31,65 @@
                             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="text-muted">Total Revenue</h5>
+                                        <h5 class="text-muted">Total Devices in stock</h5>
+                                        <hr>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">$12099</h1>
+                                            <h1 class="mb-1" >{{ total_device }}</h1>
                                         </div>
-                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                            <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span>
-                                        </div>
+{#                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">#}
+{#                                            <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span>#}
+{#                                        </div>#}
                                     </div>
-                                    <div id="sparkline-revenue"></div>
+{#                                    #id="sparkline-revenue"#}
+                                    <div ></div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="text-muted">Affiliate Revenue</h5>
+                                        <h5 class="text-muted">Total Item</h5>
+                                        <hr>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">$12099</h1>
+                                            <h1 class="mb-1">{{ total_items }}</h1>
                                         </div>
-                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                            <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span>
-                                        </div>
+{#                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">#}
+{#                                            <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span>#}
+{#                                        </div>#}
                                     </div>
-                                    <div id="sparkline-revenue2"></div>
+{#                                    id="sparkline-revenue2"#}
+                                    <div ></div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="text-muted">Refunds</h5>
+                                        <h5 class="text-muted">Damaged Device</h5>
+                                        <hr>
                                         <div class="metric-value d-inline-block">
                                             <h1 class="mb-1">0.00</h1>
                                         </div>
-                                        <div class="metric-label d-inline-block float-right text-primary font-weight-bold">
-                                            <span>N/A</span>
-                                        </div>
+{#                                        <div class="metric-label d-inline-block float-right text-primary font-weight-bold">#}
+{#                                            <span>N/A</span>#}
+{#                                        </div>#}
                                     </div>
-                                    <div id="sparkline-revenue3"></div>
+{#                                    id="sparkline-revenue3"#}
+                                    <div ></div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="text-muted">Avg. Revenue Per User</h5>
+                                        <h5 class="text-muted">The system User</h5>
+                                        <hr>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">$28000</h1>
+                                            <h1 class="mb-1">{{ total_users }}</h1>
                                         </div>
-                                        <div class="metric-label d-inline-block float-right text-secondary font-weight-bold">
-                                            <span>-2.00%</span>
-                                        </div>
+{#                                        <div class="metric-label d-inline-block float-right text-secondary font-weight-bold">#}
+{#                                            <span>-2.00%</span>#}
+{#                                        </div>#}
                                     </div>
-                                    <div id="sparkline-revenue4"></div>
+{#                                    id="sparkline-revenue4"#}
+                                    <div ></div>
                                 </div>
                             </div>
                         </div>
@@ -102,27 +110,27 @@
                                                     <tr class="border-0">
                                                         <th class="border-0">#</th>
                                                         <th class="border-0">Device Name</th>
-                                                        <th class="border-0">office</th>
-                                                        <th class="border-0">Serial Number</th>
-                                                        <th class="border-0">Code</th>
-                                                        <th class="border-0">Order Time</th>
                                                         <th class="border-0">Status</th>
+                                                        <th class="border-0">Description</th>
+                                                        <th class="border-0">person</th>
+                                                        <th class="border-0">Title</th>
+
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                {% for item in items %}
+                                                {% for i in item %}
                                                     <tr>
 {#                                                        <td>1</td>#}
 {#                                                        <td>#}
 {#                                                            <div class="m-r-10"><img src="assets/images/product-pic.jpg" alt="user" class="rounded" width="45"></div>#}
 {#                                                        </td>#}
-                                                        <td></td>
-                                                        <td>{{ item.name }}</td>
-                                                        <td>{{ item.office }}</td>
-                                                        <td>{{ item.serialNumber }}</td>
-                                                        <td>{{ item.code}}</td>
-                                                        <td>{{ item.date_created }}</td>
-                                                        <td>{{ item.status }}</td>
+                                                        <td>{{ i.id}}</td>
+                                                        <td>{{ i.device }}</td>
+                                                        <td>{{ i.status }}</td>
+                                                        <td>{{ i.description }}</td>
+                                                        <td>{{ i.person}}</td>
+                                                        <td>{{ i.title }}</td>
+
 {#                                                        <td><span class="badge-dot badge-brand mr-1"></span>InTransit </td>#}
                                                     </tr>
                                                 {% endfor %}
@@ -154,9 +162,9 @@
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                                 <div class="card border-3 border-top border-top-primary">
                                     <div class="card-body">
-                                        <h5 class="text-muted">Sales</h5>
+                                        <h5 class="text-muted">Submitted Device</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">$12099</h1>
+                                            <h1 class="mb-1">{{ submitted }}</h1>
                                         </div>
                                         <div class="metric-label d-inline-block float-right text-success font-weight-bold">
                                             <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">5.86%</span>
@@ -173,9 +181,9 @@
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                                 <div class="card border-3 border-top border-top-primary">
                                     <div class="card-body">
-                                        <h5 class="text-muted">New Customer</h5>
+                                        <h5 class="text-muted">Not Working</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">1245</h1>
+                                            <h1 class="mb-1">{{ not_work }}</h1>
                                         </div>
                                         <div class="metric-label d-inline-block float-right text-success font-weight-bold">
                                             <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">10%</span>
@@ -192,9 +200,9 @@
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                                 <div class="card border-3 border-top border-top-primary">
                                     <div class="card-body">
-                                        <h5 class="text-muted">Visitor</h5>
+                                        <h5 class="text-muted">Working</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">13000</h1>
+                                            <h1 class="mb-1">{{ work }}</h1>
                                         </div>
                                         <div class="metric-label d-inline-block float-right text-success font-weight-bold">
                                             <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">5%</span>

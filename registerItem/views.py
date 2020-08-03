@@ -21,10 +21,10 @@ def recordItem(request):
     return render(request, 'registerItem.html', context)
 
 
-# def allItem(request):
-#     items = Item.objects.all()
-#     context = {'items': items}
-#     return render(request, 'dashboard.html', context)
+def allItem(request):
+    item = Item.objects.all()
+    context = {'item': item}
+    return render(request, 'dashboard.html', context)
 
 
 def updateItem(request, pk):
